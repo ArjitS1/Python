@@ -208,3 +208,95 @@ a.count(1) // counts frequency of 1 in a
 
 
 //List Comprehension
+Question:    			
+Input : X,Y,Z,N where  X,Y,Y represent the dimensions of a cuboid.Print a list of all possible coordinates given by (i,j,k) on a 3D grid where the sum of i+j+k is not equal to N.
+1
+1
+1
+2
+
+Output :
+[[0, 0, 0], [0, 0, 1], [0, 1, 0], [1, 0, 0], [1, 1, 1]]
+
+
+print([[i,j,k] for i in range(x+1) for j in range(y+1) for k in range(z+1) if((i+j+k)!=n)])
+
+
+
+
+Sets
+//unordered and unsequenced collection
+s = {"A","B","C"}
+
+//Adding Elements
+a.add("Orange")
+s.update(["Mango","Grapes"])//adds multiple items to set
+
+//Removing Elements
+s.remove("A")
+s.discard("A") // If item not present doesnt raise error
+
+//Other Utility Methods
+s3 = s1.union(s2)
+difference(),intersection(),issubset(),issuperset(),symmetric_difference
+
+//Finding Subsets
+subsets=[]
+for i in range(len(arr)+1): 
+for j in range(i+1,len(arr)+1):
+s=arr[i:j]
+subsets.append(s)
+
+
+
+
+Dictionaries
+
+d={
+"brand":"Ford",
+"model":"Mustang",
+"year":1964
+}
+
+//Accesing Items using Key
+d["brand"]//Ford
+
+//Loop through
+for k in d:
+	print(k,d[k]) // Key,value
+
+for k,v in d.items():
+	print(k,v)
+
+//Removing item with specified key:
+del d["year"]
+d.pop("year")
+
+
+
+
+
+
+
+
+Multiple Arguments
+
+def fun(*args):
+total = 0
+for i in args:
+total += i
+return total
+
+print(fun())
+print(fun(1))
+print(fun(1, 2, 3))
+
+It is called unpacking operator.
+Meaning, if you have a function which takes multiple input arguments, say func(a,b,c); instead of passing them seperately, you can pack them in a list, args = [a,b,c]; and pass this list to your function, func(*args)
+
+And How does your function know that the received argument (args) is a packed list? It'll when you supply unpack argument '*'
+
+Note, operator '**', when used on a dictionary, returns its keys.
+
+Ques Given n ..print 1234...n
+print(*range(1, int(input())+1), sep='')
